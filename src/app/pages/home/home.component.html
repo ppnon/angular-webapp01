@@ -1,0 +1,24 @@
+<H1>
+  Home Component
+</H1>
+<p>
+  <a href="https://jsonplaceholder.typicode.com/posts">https://jsonplaceholder.typicode.com/posts</a>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="posts" >
+    <tr *ngFor="let post of posts | slice:0:15 ; let i = index">
+      <td>{{i}}</td>
+      <td>{{post.id}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.body}}</td>
+    </tr>
+  </tbody>
+</table>
