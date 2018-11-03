@@ -1,38 +1,51 @@
-<H1>
-  Home Component
-</H1>
-<p>
-  <a href="https://jsonplaceholder.typicode.com/posts">https://jsonplaceholder.typicode.com/posts</a>
-</p>
-<p>
-  Today: {{ fecha | date:format }} 
-</p>
-<p>
-  Number (2.12345): {{ numero | number:'3.1-4' }}
-  <!-- https://angular.io/api/common/DecimalPipe -->
-</p>
-<p>
-  <button (click)='clickFormat()'>Format date</button>
-
-</p>
-<p>
-  <img [src]="imagen | defaultImg " alt="Loading...">
-</p>
-<table>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Body</th>
-    </tr>
-  </thead>
-  <tbody *ngIf="posts" >
-    <tr *ngFor="let post of posts | slice:0:5 ; let i = index">
-      <td>{{i}}</td>
-      <td>{{post.id}}</td>
-      <td>{{post.title}}</td>
-      <td>{{post.body}}</td>
-    </tr>
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, init-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <H1>
+      Home Component
+    </H1>
+    <p>
+      <a href="https://jsonplaceholder.typicode.com/posts">https://jsonplaceholder.typicode.com/posts</a>
+    </p>
+    <p>
+      Today: {{ fecha | date:format }} 
+    </p>
+    <p>
+      Number (2.12345): {{ numero | number:'3.1-4' }}
+      <!-- https://angular.io/api/common/DecimalPipe -->
+    </p>
+    <p>
+      <button (click)='clickFormat()'>Format date</button>
+    
+    </p>
+    <p>
+      <img [src]="imagen | defaultImg " alt="Loading...">
+    </p>
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="posts" >
+        <tr *ngFor="let post of posts | slice:0:5 ; let i = index">
+          <td>{{i}}</td>
+          <td>{{post.id}}</td>
+          <td>{{post.title}}</td>
+          <td>{{post.body}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
